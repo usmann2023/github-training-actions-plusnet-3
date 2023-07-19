@@ -1,6 +1,12 @@
 name: My First Workflow
 
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: "1 15 * 1 *" 
+    - cron: "1 15 * 1 1"
+  repository_dispatch:
+    type: [yearly]
 
 jobs:
   echo-hello-world:
@@ -8,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello Plusnet
-        run: echo "Hello Plusnet!"
+        run: echo "Hello Plusnet ${{ github.ref }}"
       - name: Checkout
         uses: actions/checkout@v3.5.3
         
