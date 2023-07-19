@@ -19,4 +19,9 @@ jobs:
         run: echo '${{ toJSON(github) }}'
       - name: Checkout
         uses: actions/checkout@v3.5.3
+      - name: Creating GitHub Output
+        run: echo "demo=Plusnet" >> $GITHUB_OUTPUT
+        id: github-output
+      - name: Using GitHub Output
+        run: echo "${{ steps.github-output.outputs.demo }}"
         
