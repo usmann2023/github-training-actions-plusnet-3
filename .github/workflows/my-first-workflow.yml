@@ -24,7 +24,7 @@ jobs:
       - name: Hello Plusnet
         run: | 
           echo "Hello Plusnet ${{ github.ref }}"
-          echo "Hello Plusnet ${{ MY_ENV_VAR }}"
+          echo "Hello Plusnet $MY_ENV_VAR"
         env:
           MY_ENV_VAR: Test
       - name: Dump GitHub Context
