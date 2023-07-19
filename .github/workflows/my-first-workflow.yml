@@ -9,4 +9,6 @@ jobs:
     steps:
       - name: Hello Plusnet
         run: echo "Hello Plusnet!"
+      - name: Checkout
+        uses: actions/checkout@v3.5.3
         
